@@ -112,7 +112,11 @@ namespace Lab5_CSHARP_Vartiant6.Windows
                     MessageBoxIcon.Error);
             else
             {
-                
+                var removeReaderDialog = new RemoveReaderDialog(_readers, _books);
+                removeReaderDialog.ShowDialog();
+                var updateDataGridViewReaderThreadStart = new ThreadStart(StartUpdateDataGridViewReaders);
+                var updateDataGridViewReaderThread = new Thread(updateDataGridViewReaderThreadStart);
+                updateDataGridViewReaderThread.Start();
             }
         }
 
