@@ -1,6 +1,6 @@
 ﻿namespace Lab5_CSHARP_Vartiant6.Class
 {
-    public abstract class Book
+    public class Book
     {
         private string BookName { get; set; }
         private string BookAuthor { get; set; }

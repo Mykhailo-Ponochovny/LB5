@@ -1,11 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
+using System.Windows.Forms;
 
 namespace Lab5_CSHARP_Vartiant6.Class
 {
     public class Functions
     {
+        //Json for logs
         public static void SerializeJsonLogs(List<string> logs)
         {
             if (!Directory.Exists("data"))
@@ -26,6 +28,7 @@ namespace Lab5_CSHARP_Vartiant6.Class
             return result;
         }
 
+        //Json for Books
         public static void SerializeJsonBooks(List<Book> books)
         {
             if (!Directory.Exists("data"))
@@ -44,6 +47,50 @@ namespace Lab5_CSHARP_Vartiant6.Class
             }
 
             return result;
+        }
+        
+        //Json for Readers
+        public static void SerializeJsonReaders(List<Reader> readers)
+        {
+            if (!Directory.Exists("data"))
+                Directory.CreateDirectory("data");
+            var saveReadersJson = JsonSerializer.Serialize(readers);
+            File.WriteAllText("data/readers.json", saveReadersJson);
+        }
+
+        public static List<Reader> DeserializeJsonReaders()
+        {
+            var result = new List<Reader>();
+            if (File.Exists("data/readers.json"))
+            {
+                var readReadersJson = File.ReadAllText("data/readers.json");
+                result = JsonSerializer.Deserialize<List<Reader>>(readReadersJson);
+            }
+
+            return result;
+        }
+
+        //update DataGridView on main window
+        public static void UpdateDataGridViewBooks(DataGridView dataGridView, List<Book> books)
+        {
+            dataGridView.Rows.Clear();
+            if (books.Count > 0)
+            {
+                for (var i = 0; i < books.Count; i++)
+                    dataGridView.Rows.Add(i + 1, books[i].GetSetBookName, books[i].GetSetBookAuthor,
+                        books[i].GetSetBookCountPages, books[i].GetSetBookNumber);
+            }
+        }
+
+        public static void UpdateDataGridViewReaders(DataGridView dataGridView, List<Reader> readers)
+        {
+            dataGridView.Rows.Clear();
+            if (readers.Count > 0)
+            {
+                for (var i = 0; i < readers.Count; i++)
+                    dataGridView.Rows.Add(i + 1, readers[i].GetSetReaderSurname + " " + readers[i].GetSetReaderName,
+                        readers[i].GetSetReaderNumber);
+            }
         }
     }
 }
