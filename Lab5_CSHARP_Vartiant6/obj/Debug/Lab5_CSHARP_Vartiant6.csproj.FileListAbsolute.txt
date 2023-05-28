@@ -30,3 +30,4 @@ C:\Users\vlad3\OneDrive\Desktop\Projects\C#\Lab5_CSHARP_Vartiant6\Lab5_CSHARP_Va
 C:\Users\vlad3\OneDrive\Desktop\Projects\C#\Lab5_CSHARP_Vartiant6\Lab5_CSHARP_Vartiant6\obj\Debug\Lab5_CSHARP_Vartiant6.csproj.CopyComplete
 C:\Users\vlad3\OneDrive\Desktop\Projects\C#\Lab5_CSHARP_Vartiant6\Lab5_CSHARP_Vartiant6\obj\Debug\Lab5_CSHARP_Vartiant6.Windows.AddBookDialog.resources
 C:\Users\vlad3\OneDrive\Desktop\Projects\C#\Lab5_CSHARP_Vartiant6\Lab5_CSHARP_Vartiant6\obj\Debug\Lab5_CSHARP_Vartiant6.Windows.RemoveBookDialog.resources
+C:\Users\vlad3\OneDrive\Desktop\Projects\C#\Lab5_CSHARP_Vartiant6\Lab5_CSHARP_Vartiant6\obj\Debug\Lab5_CSHARP_Vartiant6.Windows.AddReaderDialog.resources

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 using Lab5_CSHARP_Vartiant6.Class;
@@ -33,6 +34,12 @@ namespace Lab5_CSHARP_Vartiant6.Windows
         {
             Functions.UpdateDataGridViewBooks(dataGridViewBooks, _books);
             Functions.SerializeJsonBooks(_books);
+        }
+        
+        private void StartUpdateDataGridViewReaders()
+        {
+            Functions.UpdateDataGridViewReaders(dataGridViewReaders, _readers);
+            Functions.SerializeJsonReaders(_readers);
         }
 
         public MainWindow()
@@ -74,11 +81,73 @@ namespace Lab5_CSHARP_Vartiant6.Windows
 
         private void removeBookToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var removeBookDialog = new RemoveBookDialog(_books, _readers);
-            removeBookDialog.ShowDialog();
-            var updateBooksThreadStart = new ThreadStart(StartUpdateDataGridViewBooks);
-            var updateBooksThread = new Thread(updateBooksThreadStart);
-            updateBooksThread.Start();
+            if (_books.Count == 0)
+                MessageBox.Show("В програмі відсутні записи про книги!", "Помилка!", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            else
+            {
+                var removeBookDialog = new RemoveBookDialog(_books, _readers);
+                removeBookDialog.ShowDialog();
+                var updateBooksThreadStart = new ThreadStart(StartUpdateDataGridViewBooks);
+                var updateBooksThread = new Thread(updateBooksThreadStart);
+                updateBooksThread.Start();
+            }
+        }
+
+        private void giveBookToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (_readers.Count == 0)
+                MessageBox.Show("В програмі відсутні записи про читачів!", "Помилка!", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            else
+            {
+                
+            }
+        }
+
+        private void removeReaderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (_readers.Count == 0)
+                MessageBox.Show("В програмі відсутні записи про читачів!", "Помилка!", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            else
+            {
+                
+            }
+        }
+
+        private void backBookToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (_readers.Count == 0)
+                MessageBox.Show("В програмі відсутні записи про читачів!", "Помилка!", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            else
+            {
+                
+            }
+        }
+
+        private void readerBookToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (_readers.Count == 0)
+                MessageBox.Show("В програмі відсутні записи про читачів!", "Помилка!", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            else
+            {
+                
+            }
+        }
+
+        private void addReaderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var addReaderDialog = new AddReaderDialog(_readers);
+            addReaderDialog.ShowDialog();
+            if (_readers.Count > 0)
+            {
+                var updateDataGridViewReaderThreadStart = new ThreadStart(StartUpdateDataGridViewReaders);
+                var updateDataGridViewReaderThread = new Thread(updateDataGridViewReaderThreadStart);
+                updateDataGridViewReaderThread.Start();
+            }
         }
     }
 }

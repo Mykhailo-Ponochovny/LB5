@@ -111,6 +111,7 @@
             this.giveBookToolStripMenuItem.Name = "giveBookToolStripMenuItem";
             this.giveBookToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.giveBookToolStripMenuItem.Text = "Видати книгу";
+            this.giveBookToolStripMenuItem.Click += new System.EventHandler(this.giveBookToolStripMenuItem_Click);
             // 
             // removeBookToolStripMenuItem
             // 
@@ -131,24 +132,28 @@
             this.addReaderToolStripMenuItem.Name = "addReaderToolStripMenuItem";
             this.addReaderToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.addReaderToolStripMenuItem.Text = "Додати читача";
+            this.addReaderToolStripMenuItem.Click += new System.EventHandler(this.addReaderToolStripMenuItem_Click);
             // 
             // removeReaderToolStripMenuItem
             // 
             this.removeReaderToolStripMenuItem.Name = "removeReaderToolStripMenuItem";
             this.removeReaderToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.removeReaderToolStripMenuItem.Text = "Видалити читача";
+            this.removeReaderToolStripMenuItem.Click += new System.EventHandler(this.removeReaderToolStripMenuItem_Click);
             // 
             // backBookToolStripMenuItem
             // 
             this.backBookToolStripMenuItem.Name = "backBookToolStripMenuItem";
             this.backBookToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.backBookToolStripMenuItem.Text = "Повернути книгу";
+            this.backBookToolStripMenuItem.Click += new System.EventHandler(this.backBookToolStripMenuItem_Click);
             // 
             // readerBookToolStripMenuItem
             // 
             this.readerBookToolStripMenuItem.Name = "readerBookToolStripMenuItem";
             this.readerBookToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.readerBookToolStripMenuItem.Text = "Книги читача";
+            this.readerBookToolStripMenuItem.Click += new System.EventHandler(this.readerBookToolStripMenuItem_Click);
             // 
             // tableLayoutPanel1
             // 
