@@ -78,7 +78,7 @@ namespace Lab5_CSHARP_Vartiant6.Class
             {
                 for (var i = 0; i < books.Count; i++)
                     dataGridView.Rows.Add(i + 1, books[i].GetSetBookName, books[i].GetSetBookAuthor,
-                        books[i].GetSetBookCountPages, books[i].GetSetBookNumber);
+                        books[i].GetSetBookCountPages, books[i].GetSetBookNumber, !books[i].GetSetBookPublished);
             }
         }
 

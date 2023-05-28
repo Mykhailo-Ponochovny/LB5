@@ -32,6 +32,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkLogsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.removeLogsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.роботаЗКнигамиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addBookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,6 +56,7 @@
             this.BookAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BookCountPages = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BookId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BookPublished = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -74,7 +76,7 @@
             // 
             // файлToolStripMenuItem
             // 
-            this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.checkLogsToolStripMenuItem, this.exitToolStripMenuItem });
+            this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.checkLogsToolStripMenuItem, this.removeLogsToolStripMenuItem, this.exitToolStripMenuItem });
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
             this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.файлToolStripMenuItem.Text = "Файл";
@@ -84,6 +86,12 @@
             this.checkLogsToolStripMenuItem.Name = "checkLogsToolStripMenuItem";
             this.checkLogsToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.checkLogsToolStripMenuItem.Text = "Переглянути логи";
+            // 
+            // removeLogsToolStripMenuItem
+            // 
+            this.removeLogsToolStripMenuItem.Name = "removeLogsToolStripMenuItem";
+            this.removeLogsToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.removeLogsToolStripMenuItem.Text = "Видалити логи";
             // 
             // exitToolStripMenuItem
             // 
@@ -232,7 +240,7 @@
             // 
             this.dataGridViewBooks.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewBooks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { this.BookNumber, this.BookName, this.BookAuthor, this.BookCountPages, this.BookId });
+            this.dataGridViewBooks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { this.BookNumber, this.BookName, this.BookAuthor, this.BookCountPages, this.BookId, this.BookPublished });
             this.dataGridViewBooks.Location = new System.Drawing.Point(6, 28);
             this.dataGridViewBooks.Name = "dataGridViewBooks";
             this.dataGridViewBooks.Size = new System.Drawing.Size(612, 582);
@@ -279,6 +287,14 @@
             this.BookId.Name = "BookId";
             this.BookId.ReadOnly = true;
             // 
+            // BookPublished
+            // 
+            this.BookPublished.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.BookPublished.HeaderText = "Доступна";
+            this.BookPublished.MinimumWidth = 100;
+            this.BookPublished.Name = "BookPublished";
+            this.BookPublished.ReadOnly = true;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -304,6 +320,10 @@
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.DataGridViewTextBoxColumn BookPublished;
+
+        private System.Windows.Forms.ToolStripMenuItem removeLogsToolStripMenuItem;
 
         private System.Windows.Forms.DataGridViewTextBoxColumn ReaderNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn ReaderFullName;

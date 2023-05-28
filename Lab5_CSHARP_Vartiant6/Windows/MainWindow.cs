@@ -101,7 +101,11 @@ namespace Lab5_CSHARP_Vartiant6.Windows
                     MessageBoxIcon.Error);
             else
             {
-                
+                var giveBookReaderDialog = new GiveBookReaderDialog(_readers, _books);
+                giveBookReaderDialog.ShowDialog();
+                var updateBooksThreadStart = new ThreadStart(StartUpdateDataGridViewBooks);
+                var updateBooksThread = new Thread(updateBooksThreadStart);
+                updateBooksThread.Start();
             }
         }
 
