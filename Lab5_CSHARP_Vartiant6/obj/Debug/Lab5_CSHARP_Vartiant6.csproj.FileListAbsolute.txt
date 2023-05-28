@@ -33,3 +33,4 @@ C:\Users\vlad3\OneDrive\Desktop\Projects\C#\Lab5_CSHARP_Vartiant6\Lab5_CSHARP_Va
 C:\Users\vlad3\OneDrive\Desktop\Projects\C#\Lab5_CSHARP_Vartiant6\Lab5_CSHARP_Vartiant6\obj\Debug\Lab5_CSHARP_Vartiant6.Windows.AddReaderDialog.resources
 C:\Users\vlad3\OneDrive\Desktop\Projects\C#\Lab5_CSHARP_Vartiant6\Lab5_CSHARP_Vartiant6\obj\Debug\Lab5_CSHARP_Vartiant6.Windows.RemoveReaderDialog.resources
 C:\Users\vlad3\OneDrive\Desktop\Projects\C#\Lab5_CSHARP_Vartiant6\Lab5_CSHARP_Vartiant6\obj\Debug\Lab5_CSHARP_Vartiant6.Windows.GiveBookReaderDialog.resources
+C:\Users\vlad3\OneDrive\Desktop\Projects\C#\Lab5_CSHARP_Vartiant6\Lab5_CSHARP_Vartiant6\obj\Debug\Lab5_CSHARP_Vartiant6.Windows.BackBookDialog.resources

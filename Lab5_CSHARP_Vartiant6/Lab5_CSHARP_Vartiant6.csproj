@@ -92,6 +92,12 @@
         <Compile Include="Windows\AddReaderDialog.Designer.cs">
           <DependentUpon>AddReaderDialog.cs</DependentUpon>
         </Compile>
+        <Compile Include="Windows\BackBookDialog.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Windows\BackBookDialog.Designer.cs">
+          <DependentUpon>BackBookDialog.cs</DependentUpon>
+        </Compile>
         <Compile Include="Windows\GiveBookReaderDialog.cs">
           <SubType>Form</SubType>
         </Compile>
@@ -130,6 +136,9 @@
         </EmbeddedResource>
         <EmbeddedResource Include="Windows\AddReaderDialog.resx">
           <DependentUpon>AddReaderDialog.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Windows\BackBookDialog.resx">
+          <DependentUpon>BackBookDialog.cs</DependentUpon>
         </EmbeddedResource>
         <EmbeddedResource Include="Windows\GiveBookReaderDialog.resx">
           <DependentUpon>GiveBookReaderDialog.cs</DependentUpon>

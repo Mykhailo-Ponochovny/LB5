@@ -22,7 +22,7 @@ namespace Lab5_CSHARP_Vartiant6.Windows
             this.ControlBox = false;
             foreach (var reader in _readers)
                 comboBoxReaders.Items.Add(
-                    $"'{reader.GetSetReaderSurname}' '{reader.GetSetReaderName}' '{reader.GetSetReaderNumber}'");
+                    $"{reader.GetSetReaderSurname} {reader.GetSetReaderName} {reader.GetSetReaderNumber}");
         }
 
         private void buttonChooseReader_Click(object sender, EventArgs e)
@@ -38,7 +38,7 @@ namespace Lab5_CSHARP_Vartiant6.Windows
 
                 foreach (var book in _books)
                     comboBoxBooks.Items.Add(
-                        $"'{book.GetSetBookName}' '{book.GetSetBookAuthor} '{book.GetSetBookNumber}'");
+                        $"{book.GetSetBookName} {book.GetSetBookAuthor} {book.GetSetBookNumber}");
             }
         }
 

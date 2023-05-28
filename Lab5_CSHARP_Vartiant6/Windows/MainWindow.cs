@@ -42,6 +42,20 @@ namespace Lab5_CSHARP_Vartiant6.Windows
             Functions.SerializeJsonReaders(_readers);
         }
 
+        private void UpdateDataGridViewReaders()
+        {
+            var updateDataGridViewReaderThreadStart = new ThreadStart(StartUpdateDataGridViewReaders);
+            var updateDataGridViewReaderThread = new Thread(updateDataGridViewReaderThreadStart);
+            updateDataGridViewReaderThread.Start();
+        }
+
+        private void UpdateDataGridViewBooks()
+        {
+            var updateBooksThreadStart = new ThreadStart(StartUpdateDataGridViewBooks);
+            var updateBooksThread = new Thread(updateBooksThreadStart);
+            updateBooksThread.Start();
+        }
+
         public MainWindow()
         {
             InitializeComponent();
@@ -74,9 +88,7 @@ namespace Lab5_CSHARP_Vartiant6.Windows
         {
             var addBookDialog = new AddBookDialog(_books);
             addBookDialog.ShowDialog();
-            var updateBooksThreadStart = new ThreadStart(StartUpdateDataGridViewBooks);
-            var updateBooksThread = new Thread(updateBooksThreadStart);
-            updateBooksThread.Start();
+            UpdateDataGridViewBooks();
         }
 
         private void removeBookToolStripMenuItem_Click(object sender, EventArgs e)
@@ -88,9 +100,7 @@ namespace Lab5_CSHARP_Vartiant6.Windows
             {
                 var removeBookDialog = new RemoveBookDialog(_books, _readers);
                 removeBookDialog.ShowDialog();
-                var updateBooksThreadStart = new ThreadStart(StartUpdateDataGridViewBooks);
-                var updateBooksThread = new Thread(updateBooksThreadStart);
-                updateBooksThread.Start();
+                UpdateDataGridViewBooks();
             }
         }
 
@@ -103,9 +113,8 @@ namespace Lab5_CSHARP_Vartiant6.Windows
             {
                 var giveBookReaderDialog = new GiveBookReaderDialog(_readers, _books);
                 giveBookReaderDialog.ShowDialog();
-                var updateBooksThreadStart = new ThreadStart(StartUpdateDataGridViewBooks);
-                var updateBooksThread = new Thread(updateBooksThreadStart);
-                updateBooksThread.Start();
+                UpdateDataGridViewBooks();
+                UpdateDataGridViewReaders();
             }
         }
 
@@ -118,9 +127,7 @@ namespace Lab5_CSHARP_Vartiant6.Windows
             {
                 var removeReaderDialog = new RemoveReaderDialog(_readers, _books);
                 removeReaderDialog.ShowDialog();
-                var updateDataGridViewReaderThreadStart = new ThreadStart(StartUpdateDataGridViewReaders);
-                var updateDataGridViewReaderThread = new Thread(updateDataGridViewReaderThreadStart);
-                updateDataGridViewReaderThread.Start();
+                UpdateDataGridViewReaders();
             }
         }
 
@@ -131,7 +138,10 @@ namespace Lab5_CSHARP_Vartiant6.Windows
                     MessageBoxIcon.Error);
             else
             {
-                
+                var backBookDialog = new BackBookDialog(_readers, _books);
+                backBookDialog.ShowDialog();
+                UpdateDataGridViewBooks();
+                UpdateDataGridViewReaders();
             }
         }
 
@@ -151,11 +161,7 @@ namespace Lab5_CSHARP_Vartiant6.Windows
             var addReaderDialog = new AddReaderDialog(_readers);
             addReaderDialog.ShowDialog();
             if (_readers.Count > 0)
-            {
-                var updateDataGridViewReaderThreadStart = new ThreadStart(StartUpdateDataGridViewReaders);
-                var updateDataGridViewReaderThread = new Thread(updateDataGridViewReaderThreadStart);
-                updateDataGridViewReaderThread.Start();
-            }
+                UpdateDataGridViewReaders();
         }
     }
 }
