@@ -71,5 +71,14 @@ namespace Lab5_CSHARP_Vartiant6.Windows
             var updateBooksThread = new Thread(updateBooksThreadStart);
             updateBooksThread.Start();
         }
+
+        private void removeBookToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var removeBookDialog = new RemoveBookDialog(_books, _readers);
+            removeBookDialog.ShowDialog();
+            var updateBooksThreadStart = new ThreadStart(StartUpdateDataGridViewBooks);
+            var updateBooksThread = new Thread(updateBooksThreadStart);
+            updateBooksThread.Start();
+        }
     }
 }

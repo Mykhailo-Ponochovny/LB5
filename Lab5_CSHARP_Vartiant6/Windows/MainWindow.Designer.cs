@@ -117,6 +117,7 @@
             this.removeBookToolStripMenuItem.Name = "removeBookToolStripMenuItem";
             this.removeBookToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.removeBookToolStripMenuItem.Text = "Видалити книгу";
+            this.removeBookToolStripMenuItem.Click += new System.EventHandler(this.removeBookToolStripMenuItem_Click);
             // 
             // роботаЗЧитачамиToolStripMenuItem
             // 

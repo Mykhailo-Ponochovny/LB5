@@ -92,5 +92,17 @@ namespace Lab5_CSHARP_Vartiant6.Class
                         readers[i].GetSetReaderNumber);
             }
         }
+        
+        //find BookNumber is readers list
+        public static void RemoveBookNumberInReaders(int bookNumber, List<Reader> readers)
+        {
+            foreach (var reader in readers)
+            {
+                var getListBookNumbers = reader.GetSetBookNumbers;
+                var findNumber = getListBookNumbers.FindIndex(bn => bn.Equals(bookNumber));
+                if (findNumber != null)
+                    reader.RemoveBookNumber = findNumber;
+            }
+        }
     }
 }

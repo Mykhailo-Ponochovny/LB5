@@ -53,5 +53,10 @@ namespace Lab5_CSHARP_Vartiant6.Class
             get => BooksNumbers;
             set => BooksNumbers = value;
         }
+
+        public int RemoveBookNumber
+        {
+            set => BooksNumbers.RemoveAt(value);
+        }
     }
 }
