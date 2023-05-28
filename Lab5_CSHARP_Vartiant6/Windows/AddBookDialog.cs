@@ -7,6 +7,8 @@ namespace Lab5_CSHARP_Vartiant6.Windows
 {
     public partial class AddBookDialog : Form
     {
+        public bool isAdd = false;
+        
         private List<Book> _books;
 
         internal AddBookDialog(List<Book> books)
@@ -28,6 +30,7 @@ namespace Lab5_CSHARP_Vartiant6.Windows
             else
             {
                 var bookNumber = Convert.ToInt32(Math.Round(numericUpDownBookNumber.Value, 0));
+                
                 var checkBookNumberRepeat = _books.Find(x => x.GetSetBookNumber.Equals(bookNumber));
                 if (checkBookNumberRepeat != null)
                     MessageBox.Show("Книга з цим номером вже записана!", "Помилка!", MessageBoxButtons.OK,
@@ -37,6 +40,7 @@ namespace Lab5_CSHARP_Vartiant6.Windows
                     var bookCountPages = Convert.ToInt32(Math.Round(numericUpDownCountPages.Value, 0));
                     var newBook = new Book(textBoxBookName.Text, textBoxAuthor.Text, bookCountPages, bookNumber, false);
                     _books.Add(newBook);
+                    isAdd = true;
                     this.Close();
                 }
             }

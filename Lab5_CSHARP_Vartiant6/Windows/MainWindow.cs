@@ -13,9 +13,12 @@ namespace Lab5_CSHARP_Vartiant6.Windows
         private List<Reader> _readers;
         private List<Book> _books;
 
+        private LogScreen _logScreen;
+
         private void StartDeserializeLogsJson()
         {
             _logs = Functions.DeserializeJsonLogs();
+            _logScreen = new LogScreen(_logs);
         }
 
         private void StartDeserializeReadersJson()
@@ -42,6 +45,12 @@ namespace Lab5_CSHARP_Vartiant6.Windows
             Functions.SerializeJsonReaders(_readers);
         }
 
+        private void StartUpdateDataGridViewLogs()
+        {
+            Functions.UpdateDataGridViewLogs(_logScreen.lnkDataGridView, _logs);
+            Functions.SerializeJsonLogs(_logs);
+        }
+
         private void UpdateDataGridViewReaders()
         {
             var updateDataGridViewReaderThreadStart = new ThreadStart(StartUpdateDataGridViewReaders);
@@ -56,6 +65,13 @@ namespace Lab5_CSHARP_Vartiant6.Windows
             updateBooksThread.Start();
         }
 
+        private void UpdateDataGridViewLogs()
+        {
+            var updateLogsThreadStart = new ThreadStart(StartUpdateDataGridViewLogs);
+            var updateLogsThread = new Thread(updateLogsThreadStart);
+            updateLogsThread.Start();
+        }
+
         public MainWindow()
         {
             InitializeComponent();
@@ -64,9 +80,11 @@ namespace Lab5_CSHARP_Vartiant6.Windows
         private void MainWindow_Load(object sender, EventArgs e)
         {
             //start thread read logs
+            _logs = new List<string>();
             var readLogsThreadStart = new ThreadStart(StartDeserializeLogsJson);
             var readLogsThread = new Thread(readLogsThreadStart);
             readLogsThread.Start();
+            _logScreen = new LogScreen(_logs);
             
             //start thread read books
             var readBooksThreadStart = new ThreadStart(StartDeserializeBooksJson);
@@ -88,6 +106,12 @@ namespace Lab5_CSHARP_Vartiant6.Windows
         {
             var addBookDialog = new AddBookDialog(_books);
             addBookDialog.ShowDialog();
+            if (addBookDialog.isAdd)
+            {
+                _logs.Add("Користувач додав книгу");
+                if (_logScreen.isOpen)
+                    UpdateDataGridViewLogs();
+            }
             UpdateDataGridViewBooks();
         }
 
@@ -100,6 +124,12 @@ namespace Lab5_CSHARP_Vartiant6.Windows
             {
                 var removeBookDialog = new RemoveBookDialog(_books, _readers);
                 removeBookDialog.ShowDialog();
+                if (removeBookDialog.isRemove)
+                {
+                    _logs.Add("Користувач видалив книгу");
+                    if (_logScreen.isOpen)
+                        UpdateDataGridViewLogs();
+                }
                 UpdateDataGridViewBooks();
             }
         }
@@ -113,6 +143,12 @@ namespace Lab5_CSHARP_Vartiant6.Windows
             {
                 var giveBookReaderDialog = new GiveBookReaderDialog(_readers, _books);
                 giveBookReaderDialog.ShowDialog();
+                if (giveBookReaderDialog.isGive)
+                {
+                    _logs.Add("Користувач видав книгу читачеві");
+                    if (_logScreen.isOpen)
+                        UpdateDataGridViewLogs();
+                }
                 UpdateDataGridViewBooks();
                 UpdateDataGridViewReaders();
             }
@@ -127,6 +163,13 @@ namespace Lab5_CSHARP_Vartiant6.Windows
             {
                 var removeReaderDialog = new RemoveReaderDialog(_readers, _books);
                 removeReaderDialog.ShowDialog();
+                if (removeReaderDialog.isRemove)
+                {
+                    _logs.Add("Користувач видалив читача");
+                    if (_logScreen.isOpen)
+                        UpdateDataGridViewLogs();
+                }
+                UpdateDataGridViewBooks();
                 UpdateDataGridViewReaders();
             }
         }
@@ -140,19 +183,14 @@ namespace Lab5_CSHARP_Vartiant6.Windows
             {
                 var backBookDialog = new BackBookDialog(_readers, _books);
                 backBookDialog.ShowDialog();
+                if (backBookDialog.isBack)
+                {
+                    _logs.Add($"Користувач повернув книгу");
+                    if (_logScreen.isOpen)
+                        UpdateDataGridViewLogs();
+                }
                 UpdateDataGridViewBooks();
                 UpdateDataGridViewReaders();
-            }
-        }
-
-        private void readerBookToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (_readers.Count == 0)
-                MessageBox.Show("В програмі відсутні записи про читачів!", "Помилка!", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            else
-            {
-                
             }
         }
 
@@ -160,8 +198,26 @@ namespace Lab5_CSHARP_Vartiant6.Windows
         {
             var addReaderDialog = new AddReaderDialog(_readers);
             addReaderDialog.ShowDialog();
-            if (_readers.Count > 0)
+            if (addReaderDialog.addReader)
+            {
+                _logs.Add("Користувач додав читача");
+                if (_logScreen.isOpen)
+                    UpdateDataGridViewLogs();
                 UpdateDataGridViewReaders();
+            }
+        }
+
+        private void checkLogsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!_logScreen.isOpen)
+                _logScreen.Show();
+        }
+
+        private void removeLogsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _logs = new List<string>();
+            if (_logScreen.isOpen)
+                UpdateDataGridViewLogs();
         }
     }
 }

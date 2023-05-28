@@ -7,6 +7,8 @@ namespace Lab5_CSHARP_Vartiant6.Windows
 {
     public partial class RemoveBookDialog : Form
     {
+        public bool isRemove = false;
+        
         private List<Book> _books;
         private List<Reader> _readers;
 
@@ -36,6 +38,7 @@ namespace Lab5_CSHARP_Vartiant6.Windows
                 {
                     Functions.RemoveBookNumberInReaders(_books[comboBoxBooks.SelectedIndex].GetSetBookNumber, _readers);
                     _books.RemoveAt(comboBoxBooks.SelectedIndex);
+                    isRemove = true;
                 }
                 this.Close();
             }

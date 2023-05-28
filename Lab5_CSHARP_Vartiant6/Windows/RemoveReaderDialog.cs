@@ -8,6 +8,8 @@ namespace Lab5_CSHARP_Vartiant6.Windows
 {
     public partial class RemoveReaderDialog : Form
     {
+        public bool isRemove = false;
+        
         private List<Reader> _readers;
         private List<Book> _books;
 
@@ -43,6 +45,7 @@ namespace Lab5_CSHARP_Vartiant6.Windows
                             _books[findIndexBookNumber].GetSetBookPublished = false;
                     }
                     _readers.RemoveAt(comboBoxReaders.SelectedIndex);
+                    isRemove = true;
                     this.Close();
                 }
             }

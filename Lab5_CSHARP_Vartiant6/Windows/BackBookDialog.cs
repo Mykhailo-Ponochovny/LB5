@@ -7,6 +7,8 @@ namespace Lab5_CSHARP_Vartiant6.Windows
 {
     public partial class BackBookDialog : Form
     {
+        public bool isBack = false;
+        
         private List<Reader> _readers;
         private List<Book> _books;
 
@@ -59,6 +61,7 @@ namespace Lab5_CSHARP_Vartiant6.Windows
                         .GetSetBookNumbers[comboBoxBooks.SelectedIndex]));
                 _books[findIndexBook].GetSetBookPublished = false;
                 _readers[comboBoxReaders.SelectedIndex].RemoveBookNumber = comboBoxBooks.SelectedIndex;
+                isBack = true;
                 this.Close();
             }
         }

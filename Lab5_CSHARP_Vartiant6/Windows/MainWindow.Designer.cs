@@ -42,7 +42,6 @@
             this.addReaderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeReaderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backBookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.readerBookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridViewReaders = new System.Windows.Forms.DataGridView();
@@ -86,12 +85,14 @@
             this.checkLogsToolStripMenuItem.Name = "checkLogsToolStripMenuItem";
             this.checkLogsToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.checkLogsToolStripMenuItem.Text = "Переглянути логи";
+            this.checkLogsToolStripMenuItem.Click += new System.EventHandler(this.checkLogsToolStripMenuItem_Click);
             // 
             // removeLogsToolStripMenuItem
             // 
             this.removeLogsToolStripMenuItem.Name = "removeLogsToolStripMenuItem";
             this.removeLogsToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.removeLogsToolStripMenuItem.Text = "Видалити логи";
+            this.removeLogsToolStripMenuItem.Click += new System.EventHandler(this.removeLogsToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
@@ -130,7 +131,7 @@
             // 
             // роботаЗЧитачамиToolStripMenuItem
             // 
-            this.роботаЗЧитачамиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.addReaderToolStripMenuItem, this.removeReaderToolStripMenuItem, this.backBookToolStripMenuItem, this.readerBookToolStripMenuItem });
+            this.роботаЗЧитачамиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.addReaderToolStripMenuItem, this.removeReaderToolStripMenuItem, this.backBookToolStripMenuItem });
             this.роботаЗЧитачамиToolStripMenuItem.Name = "роботаЗЧитачамиToolStripMenuItem";
             this.роботаЗЧитачамиToolStripMenuItem.Size = new System.Drawing.Size(123, 20);
             this.роботаЗЧитачамиToolStripMenuItem.Text = "Робота з читачами";
@@ -155,13 +156,6 @@
             this.backBookToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.backBookToolStripMenuItem.Text = "Повернути книгу";
             this.backBookToolStripMenuItem.Click += new System.EventHandler(this.backBookToolStripMenuItem_Click);
-            // 
-            // readerBookToolStripMenuItem
-            // 
-            this.readerBookToolStripMenuItem.Name = "readerBookToolStripMenuItem";
-            this.readerBookToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.readerBookToolStripMenuItem.Text = "Книги читача";
-            this.readerBookToolStripMenuItem.Click += new System.EventHandler(this.readerBookToolStripMenuItem_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -328,7 +322,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ReaderNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn ReaderFullName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ReadersID;
-        private System.Windows.Forms.ToolStripMenuItem readerBookToolStripMenuItem;
 
         private System.Windows.Forms.DataGridViewTextBoxColumn BookNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn BookName;

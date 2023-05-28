@@ -7,6 +7,8 @@ namespace Lab5_CSHARP_Vartiant6.Windows
 {
     public partial class GiveBookReaderDialog : Form
     {
+        public bool isGive = false;
+        
         private List<Reader> _readers;
         private List<Book> _books;
 
@@ -55,6 +57,7 @@ namespace Lab5_CSHARP_Vartiant6.Windows
                     _readers[comboBoxReaders.SelectedIndex].AddBookNumbers =
                         _books[comboBoxBooks.SelectedIndex].GetSetBookNumber;
                     _books[comboBoxBooks.SelectedIndex].GetSetBookPublished = true;
+                    isGive = true;
                     this.Close();
                 }
             }

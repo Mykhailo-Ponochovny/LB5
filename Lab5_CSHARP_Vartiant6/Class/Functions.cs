@@ -100,9 +100,17 @@ namespace Lab5_CSHARP_Vartiant6.Class
             {
                 var getListBookNumbers = reader.GetSetBookNumbers;
                 var findNumber = getListBookNumbers.FindIndex(bn => bn.Equals(bookNumber));
-                if (findNumber != null)
+                if (findNumber != -1)
                     reader.RemoveBookNumber = findNumber;
             }
+        }
+        
+        //updateDataGridViewLogs
+        public static void UpdateDataGridViewLogs(DataGridView dataGridView, List<string> logs)
+        {
+            dataGridView.Rows.Clear();
+            foreach (var log in logs)
+                dataGridView.Rows.Add(log);
         }
     }
 }

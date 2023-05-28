@@ -7,6 +7,8 @@ namespace Lab5_CSHARP_Vartiant6.Windows
 {
     public partial class AddReaderDialog : Form
     {
+        public bool addReader = false;
+        
         private List<Reader> _readers;
 
         internal AddReaderDialog(List<Reader> readers)
@@ -36,6 +38,7 @@ namespace Lab5_CSHARP_Vartiant6.Windows
                     var newReader = new Reader(textBoxReaderSurname.Text, textBoxReaderName.Text, readerNumber,
                         new List<int>());
                     _readers.Add(newReader);
+                    addReader = true;
                     this.Close();
                 }
             }
