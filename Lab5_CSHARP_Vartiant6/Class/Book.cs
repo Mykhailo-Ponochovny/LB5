@@ -1,4 +1,4 @@
-﻿namespace Lab5_CSHARP_Vartiant6.Class
+﻿namespace Lab5_CSHARP.Class
 {
     public class Book
     {

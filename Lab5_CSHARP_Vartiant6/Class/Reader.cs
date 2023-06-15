@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Lab5_CSHARP_Vartiant6.Class
+namespace Lab5_CSHARP.Class
 {
     public class Reader
     {

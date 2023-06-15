@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Lab5_CSHARP_Vartiant6.Windows
+namespace Lab5_CSHARP.Windows
 {
     partial class AddBookDialog
     {

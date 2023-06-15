@@ -1,4 +1,4 @@
-﻿namespace Lab5_CSHARP_Vartiant6.Windows
+﻿namespace Lab5_CSHARP.Windows
 {
     partial class MainWindow
     {
@@ -66,7 +66,11 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.файлToolStripMenuItem, this.роботаЗКнигамиToolStripMenuItem, this.роботаЗЧитачамиToolStripMenuItem });
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.файлToolStripMenuItem,
+            this.роботаЗКнигамиToolStripMenuItem,
+            this.роботаЗЧитачамиToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1284, 24);
@@ -75,7 +79,10 @@
             // 
             // файлToolStripMenuItem
             // 
-            this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.checkLogsToolStripMenuItem, this.removeLogsToolStripMenuItem, this.exitToolStripMenuItem });
+            this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.checkLogsToolStripMenuItem,
+            this.removeLogsToolStripMenuItem,
+            this.exitToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
             this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.файлToolStripMenuItem.Text = "Файл";
@@ -103,7 +110,10 @@
             // 
             // роботаЗКнигамиToolStripMenuItem
             // 
-            this.роботаЗКнигамиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.addBookToolStripMenuItem, this.giveBookToolStripMenuItem, this.removeBookToolStripMenuItem });
+            this.роботаЗКнигамиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addBookToolStripMenuItem,
+            this.giveBookToolStripMenuItem,
+            this.removeBookToolStripMenuItem});
             this.роботаЗКнигамиToolStripMenuItem.Name = "роботаЗКнигамиToolStripMenuItem";
             this.роботаЗКнигамиToolStripMenuItem.Size = new System.Drawing.Size(116, 20);
             this.роботаЗКнигамиToolStripMenuItem.Text = "Робота з книгами";
@@ -131,7 +141,10 @@
             // 
             // роботаЗЧитачамиToolStripMenuItem
             // 
-            this.роботаЗЧитачамиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.addReaderToolStripMenuItem, this.removeReaderToolStripMenuItem, this.backBookToolStripMenuItem });
+            this.роботаЗЧитачамиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addReaderToolStripMenuItem,
+            this.removeReaderToolStripMenuItem,
+            this.backBookToolStripMenuItem});
             this.роботаЗЧитачамиToolStripMenuItem.Name = "роботаЗЧитачамиToolStripMenuItem";
             this.роботаЗЧитачамиToolStripMenuItem.Size = new System.Drawing.Size(123, 20);
             this.роботаЗЧитачамиToolStripMenuItem.Text = "Робота з читачами";
@@ -159,7 +172,9 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -175,7 +190,9 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.dataGridViewReaders);
             this.groupBox2.Location = new System.Drawing.Point(633, 3);
             this.groupBox2.Name = "groupBox2";
@@ -186,9 +203,14 @@
             // 
             // dataGridViewReaders
             // 
-            this.dataGridViewReaders.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewReaders.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewReaders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewReaders.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { this.ReaderNumber, this.ReaderFullName, this.ReadersID });
+            this.dataGridViewReaders.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ReaderNumber,
+            this.ReaderFullName,
+            this.ReadersID});
             this.dataGridViewReaders.Location = new System.Drawing.Point(6, 28);
             this.dataGridViewReaders.Name = "dataGridViewReaders";
             this.dataGridViewReaders.Size = new System.Drawing.Size(612, 582);
@@ -214,14 +236,16 @@
             // ReadersID
             // 
             this.ReadersID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ReadersID.HeaderText = "Читатський номер";
+            this.ReadersID.HeaderText = "Читацький номер";
             this.ReadersID.MinimumWidth = 100;
             this.ReadersID.Name = "ReadersID";
             this.ReadersID.ReadOnly = true;
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.dataGridViewBooks);
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
@@ -232,9 +256,17 @@
             // 
             // dataGridViewBooks
             // 
-            this.dataGridViewBooks.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewBooks.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewBooks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { this.BookNumber, this.BookName, this.BookAuthor, this.BookCountPages, this.BookId, this.BookPublished });
+            this.dataGridViewBooks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.BookNumber,
+            this.BookName,
+            this.BookAuthor,
+            this.BookCountPages,
+            this.BookId,
+            this.BookPublished});
             this.dataGridViewBooks.Location = new System.Drawing.Point(6, 28);
             this.dataGridViewBooks.Name = "dataGridViewBooks";
             this.dataGridViewBooks.Size = new System.Drawing.Size(612, 582);
@@ -313,15 +345,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBooks)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         private System.Windows.Forms.DataGridViewTextBoxColumn BookPublished;
 
         private System.Windows.Forms.ToolStripMenuItem removeLogsToolStripMenuItem;
-
-        private System.Windows.Forms.DataGridViewTextBoxColumn ReaderNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ReaderFullName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ReadersID;
 
         private System.Windows.Forms.DataGridViewTextBoxColumn BookNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn BookName;
@@ -354,5 +383,9 @@
         private System.Windows.Forms.ToolStripMenuItem роботаЗКнигамиToolStripMenuItem;
 
         #endregion
+
+        private System.Windows.Forms.DataGridViewTextBoxColumn ReaderNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ReaderFullName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ReadersID;
     }
 }

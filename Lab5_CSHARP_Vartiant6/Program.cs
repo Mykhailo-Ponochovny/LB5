@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Lab5_CSHARP_Vartiant6.Windows;
+using Lab5_CSHARP.Windows;
 
-namespace Lab5_CSHARP_Vartiant6
+namespace Lab5_CSHARP
 {
     static class Program
     {

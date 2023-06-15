@@ -3,7 +3,7 @@ using System.IO;
 using System.Text.Json;
 using System.Windows.Forms;
 
-namespace Lab5_CSHARP_Vartiant6.Class
+namespace Lab5_CSHARP.Class
 {
     public class Functions
     {

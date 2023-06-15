@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using Lab5_CSHARP_Vartiant6.Class;
+using Lab5_CSHARP.Class;
 
-namespace Lab5_CSHARP_Vartiant6.Windows
+namespace Lab5_CSHARP.Windows
 {
     public partial class AddReaderDialog : Form
     {
